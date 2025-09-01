@@ -1,6 +1,6 @@
 # **Mini Proyecto 2: Predicción y Clasificación de Autos Usados**
 
-## **Integramtes**
+## **Integrantes**
 - Mariana Franco
 - Jerónimo Domínguez
 - Juan Andrés Ramos
