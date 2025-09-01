@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Introducción &#8212; My sample book</title>
+    <title>Mini Proyecto 2: Predicción y Clasificación de Autos Usados &#8212; Mini Proyecto 2 - MachineLearning</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Mini Proyecto 2: Predicción y Clasificación de Autos Usados" href="Ridge_y_Lasso.html" />
+    <link rel="next" title="ANÁLISIS EXPLORATORIO" href="Ridge_y_Lasso.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -154,8 +154,8 @@
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="Mini Proyecto 2 - MachineLearning - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Mini Proyecto 2 - MachineLearning - Home"/>`);</script>
   
   
 </a></div>
@@ -176,12 +176,17 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1 current active">
                 <a class="reference internal" href="#">
-                    Introducción
+                    Mini Proyecto 2: Predicción y Clasificación de Autos Usados
                 </a>
             </li>
         </ul>
         <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Ridge_y_Lasso.html"><strong>Mini Proyecto 2: Predicción y Clasificación de Autos Usados</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ridge_y_Lasso.html"><strong>ANÁLISIS EXPLORATORIO</strong></a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="conclusiones.html"><strong>Análisis y Reporte Final</strong></a></li>
 </ul>
 
     </div>
@@ -236,7 +241,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+      <li><a href="https://github.com/MariFraRi/MiniProyecto2" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -253,7 +258,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/MariFraRi/MiniProyecto2/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -354,7 +359,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -365,11 +372,24 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Introducción</h1>
+    <h1>Mini Proyecto 2: Predicción y Clasificación de Autos Usados</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integramtes"><strong>Integramtes</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contextualizacion-del-proyecto"><strong>Contextualización del Proyecto</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contexto"><strong>Contexto</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-del-dataset"><strong>Descripción del Dataset</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-del-dataset"><strong>Variables del Dataset</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#observaciones-importantes"><strong>Observaciones importantes</strong></a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -379,29 +399,179 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="introduccion">
-<h1>Introducción<a class="headerlink" href="#introduccion" title="Link to this heading">#</a></h1>
-<p>Este Jupyter Book presenta el <strong>Proyecto Integrador de Aprendizaje Automático 3</strong>, enfocado en la aplicación de <strong>modelos supervisados de regresión y clasificación binaria</strong> para el análisis de autos usados.</p>
-<p>El objetivo principal es construir un flujo de trabajo completo que permita:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="mini-proyecto-2-prediccion-y-clasificacion-de-autos-usados">
+<h1><strong>Mini Proyecto 2: Predicción y Clasificación de Autos Usados</strong><a class="headerlink" href="#mini-proyecto-2-prediccion-y-clasificacion-de-autos-usados" title="Link to this heading">#</a></h1>
+<section id="integramtes">
+<h2><strong>Integramtes</strong><a class="headerlink" href="#integramtes" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>Predecir el precio de un vehículo usado</strong> a partir de sus características técnicas, operativas y de mercado.</p></li>
-<li><p><strong>Clasificar si un auto se encuentra en alta o baja demanda</strong>, en función de una etiqueta creada con base en el precio mediano.</p></li>
+<li><p>Mariana Franco</p></li>
+<li><p>Jerónimo Domínguez</p></li>
+<li><p>Juan Andrés Ramos</p></li>
 </ul>
-<p>El contexto de aplicación corresponde a <strong>plataformas de compra-venta de autos usados</strong>, donde los modelos predictivos pueden apoyar a compradores y vendedores en decisiones más informadas y transparentes.</p>
-<p>El proyecto se desarrolla con un <strong>dataset real de autos usados</strong> (ejemplo: Craigslist Cars &amp; Trucks Dataset en Kaggle), e incluye las siguientes etapas:</p>
+</section>
+<section id="contextualizacion-del-proyecto">
+<h2><strong>Contextualización del Proyecto</strong><a class="headerlink" href="#contextualizacion-del-proyecto" title="Link to this heading">#</a></h2>
+<p>El propósito de este proyecto es <strong>analizar y modelar precios de autos usados</strong> publicados en la plataforma <strong>Craigslist</strong>.<br />
+Además de predecir el <strong>precio estimado de un vehículo</strong>, se busca clasificar la <strong>demanda</strong> de un auto (alta o baja), con base en sus características principales.</p>
+</section>
+<hr class="docutils" />
+<section id="contexto">
+<h2><strong>Contexto</strong><a class="headerlink" href="#contexto" title="Link to this heading">#</a></h2>
+<p><strong>Craigslist</strong> es la colección más grande del mundo de vehículos usados en venta.<br />
+Sin embargo, es muy difícil recopilar todos estos anuncios en un mismo lugar.<br />
+Para un proyecto escolar se construyó un <strong>scraper</strong> que luego se amplió, creando este dataset que incluye cada publicación de vehículos usados dentro de los Estados Unidos en Craigslist.</p>
+</section>
+<hr class="docutils" />
+<section id="descripcion-del-dataset">
+<h2><strong>Descripción del Dataset</strong><a class="headerlink" href="#descripcion-del-dataset" title="Link to this heading">#</a></h2>
+<p>El dataset proviene de <strong>Craigslist Cars and Trucks Dataset (Kaggle)</strong> y contiene información de más de <strong>426,000 vehículos</strong> listados en diferentes regiones de Estados Unidos.<br />
+Cuenta con <strong>26 variables</strong>, tanto numéricas como categóricas, relacionadas con el vehículo, el anuncio y su localización.</p>
 <ul class="simple">
-<li><p><strong>Preprocesamiento de datos</strong>: manejo de valores faltantes, codificación categórica y escalado.</p></li>
-<li><p><strong>Construcción de pipelines</strong> que integran transformaciones y modelos (Ridge, Lasso y Logistic Regression).</p></li>
-<li><p><strong>Búsqueda de hiperparámetros</strong> mediante <strong>GridSearchCV con validación cruzada</strong>.</p></li>
-<li><p><strong>Evaluación cuantitativa y visual</strong> de los modelos de regresión (MAE, RMSE, R²) y clasificación (matriz de confusión, accuracy, precision, recall, F1-score, curva ROC y AUC).</p></li>
-<li><p><strong>Análisis comparativo</strong> de los resultados y reflexión sobre el impacto de la regularización y las variables más influyentes.</p></li>
+<li><p><strong>Tamaño:</strong> 426,880 registros × 26 columnas</p></li>
+<li><p><strong>Fuente:</strong> Publicaciones en línea de Craigslist</p></li>
+<li><p><strong>Periodo de recolección:</strong> Principalmente hasta mayo de 2021</p></li>
 </ul>
-<p>El resultado esperado es un notebook/documento bien estructurado, con explicaciones claras, gráficos ilustrativos y justificación de cada decisión técnica, ideal como evidencia de integración de conocimientos en aprendizaje automático aplicado.</p>
+</section>
+<hr class="docutils" />
+<section id="variables-del-dataset">
+<h2><strong>Variables del Dataset</strong><a class="headerlink" href="#variables-del-dataset" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable</p></th>
+<th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">id</span></code></p></td>
+<td><p>Entero</p></td>
+<td><p>Identificador único del anuncio</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">url</span></code></p></td>
+<td><p>Texto</p></td>
+<td><p>Enlace al anuncio original (irrelevante para análisis)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">region</span></code></p></td>
+<td><p>Categórica</p></td>
+<td><p>Región donde se publica el anuncio</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">region_url</span></code></p></td>
+<td><p>Texto</p></td>
+<td><p>URL de la región (irrelevante)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">price</span></code></p></td>
+<td><p>Numérica</p></td>
+<td><p>Precio listado del vehículo (variable objetivo principal)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">year</span></code></p></td>
+<td><p>Numérica</p></td>
+<td><p>Año de fabricación</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">manufacturer</span></code></p></td>
+<td><p>Categórica</p></td>
+<td><p>Marca del vehículo</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">model</span></code></p></td>
+<td><p>Categórica</p></td>
+<td><p>Modelo del vehículo</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">condition</span></code></p></td>
+<td><p>Categórica</p></td>
+<td><p>Estado físico del auto (ej. “excellent”, “good”)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">cylinders</span></code></p></td>
+<td><p>Categórica</p></td>
+<td><p>Número de cilindros del motor</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fuel</span></code></p></td>
+<td><p>Categórica</p></td>
+<td><p>Tipo de combustible (gasolina, diésel, eléctrico, etc.)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">odometer</span></code></p></td>
+<td><p>Numérica</p></td>
+<td><p>Kilometraje recorrido (en millas)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">title_status</span></code></p></td>
+<td><p>Categórica</p></td>
+<td><p>Estado legal del título (ej. “clean”, “salvage”)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">transmission</span></code></p></td>
+<td><p>Categórica</p></td>
+<td><p>Tipo de transmisión (manual, automática)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">VIN</span></code></p></td>
+<td><p>Texto</p></td>
+<td><p>Número de identificación del vehículo (puede faltar)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">drive</span></code></p></td>
+<td><p>Categórica</p></td>
+<td><p>Tracción (4WD, FWD, RWD)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">size</span></code></p></td>
+<td><p>Categórica</p></td>
+<td><p>Tamaño del vehículo (compacto, mediano, grande)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">type</span></code></p></td>
+<td><p>Categórica</p></td>
+<td><p>Tipo de vehículo (sedán, SUV, camioneta, etc.)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">paint_color</span></code></p></td>
+<td><p>Categórica</p></td>
+<td><p>Color del auto</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">image_url</span></code></p></td>
+<td><p>Texto</p></td>
+<td><p>Imagen del vehículo (irrelevante)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">description</span></code></p></td>
+<td><p>Texto</p></td>
+<td><p>Descripción del anuncio (texto libre, difícil de usar directamente)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">county</span></code></p></td>
+<td><p>Texto</p></td>
+<td><p>Condado (poco útil)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">state</span></code></p></td>
+<td><p>Categórica</p></td>
+<td><p>Estado en EE.UU.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">lat</span></code>, <code class="docutils literal notranslate"><span class="pre">long</span></code></p></td>
+<td><p>Numérica</p></td>
+<td><p>Coordenadas geográficas</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">posting_date</span></code></p></td>
+<td><p>Temporal</p></td>
+<td><p>Fecha de publicación del anuncio</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="observaciones-importantes">
+<h2><strong>Observaciones importantes</strong><a class="headerlink" href="#observaciones-importantes" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>El dataset tiene <strong>valores faltantes</strong> en variables claves.</p></li>
+<li><p>Existen <strong>outliers</strong> en <code class="docutils literal notranslate"><span class="pre">price</span></code>.</p></li>
+<li><p>Varias columnas (<code class="docutils literal notranslate"><span class="pre">url</span></code>, <code class="docutils literal notranslate"><span class="pre">image_url</span></code>, <code class="docutils literal notranslate"><span class="pre">description</span></code>, <code class="docutils literal notranslate"><span class="pre">region_url</span></code>) no son útiles para modelar y probablemente se descarten.</p></li>
+<li><p>Se trabaja en dos objetivos principales:</p>
+<ol class="arabic simple">
+<li><p><strong>Regresión:</strong> Estimar el precio de un vehículo (<code class="docutils literal notranslate"><span class="pre">price</span></code>).</p></li>
+<li><p><strong>Clasificación:</strong> Determinar si un auto tiene <strong>alta o baja demanda</strong>, usando reglas de negocio (ej. número de publicaciones, precio competitivo).</p></li>
+</ol>
+</li>
+</ul>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Ridge_y_Lasso.html"><strong>Mini Proyecto 2: Predicción y Clasificación de Autos Usados</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ridge_y_Lasso.html"><strong>ANÁLISIS EXPLORATORIO</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ridge_y_Lasso.html#imputacion-de-los-datos"><strong>Imputación de los datos</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ridge_y_Lasso.html#generacion-de-variable-binaria-highdemand"><strong>Generación de variable Binaria <code class="docutils literal notranslate"><span class="pre">HighDemand</span></code></strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ridge_y_Lasso.html#realizamos-particion-antes-de-limpiar-e-imputar-con-estadisticos-para-evitar-data-leakage"><strong>Realizamos partición antes de limpiar e imputar con estadísticos para evitar <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">leakage</span></code></strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ridge_y_Lasso.html#modelado"><strong>Modelado</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="conclusiones.html"><strong>Análisis y Reporte Final</strong></a></li>
 </ul>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -439,7 +609,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><strong>Mini Proyecto 2: Predicción y Clasificación de Autos Usados</strong></p>
+        <p class="prev-next-title"><strong>ANÁLISIS EXPLORATORIO</strong></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -450,6 +620,26 @@ document.write(`
             
             
               
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integramtes"><strong>Integramtes</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contextualizacion-del-proyecto"><strong>Contextualización del Proyecto</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contexto"><strong>Contexto</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-del-dataset"><strong>Descripción del Dataset</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-del-dataset"><strong>Variables del Dataset</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#observaciones-importantes"><strong>Observaciones importantes</strong></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
             
           </div>
           <footer class="bd-footer-content">
@@ -459,7 +649,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book Community
+By Mariana Franco, Jerónimo Domínguez & Juan Andrés Ramos
 </p>
 
   </div>

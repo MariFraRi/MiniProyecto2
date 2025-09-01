@@ -1,23 +1,74 @@
-# Introducción  
+# **Mini Proyecto 2: Predicción y Clasificación de Autos Usados**
 
-Este Jupyter Book presenta el **Proyecto Integrador de Aprendizaje Automático 3**, enfocado en la aplicación de **modelos supervisados de regresión y clasificación binaria** para el análisis de autos usados.  
+## **Integramtes**
+- Mariana Franco
+- Jerónimo Domínguez
+- Juan Andrés Ramos
 
-El objetivo principal es construir un flujo de trabajo completo que permita:  
+## **Contextualización del Proyecto**
+El propósito de este proyecto es **analizar y modelar precios de autos usados** publicados en la plataforma **Craigslist**.  
+Además de predecir el **precio estimado de un vehículo**, se busca clasificar la **demanda** de un auto (alta o baja), con base en sus características principales.
 
-- **Predecir el precio de un vehículo usado** a partir de sus características técnicas, operativas y de mercado.  
-- **Clasificar si un auto se encuentra en alta o baja demanda**, en función de una etiqueta creada con base en el precio mediano.  
+---
+## **Contexto**
+**Craigslist** es la colección más grande del mundo de vehículos usados en venta.  
+Sin embargo, es muy difícil recopilar todos estos anuncios en un mismo lugar.  
+Para un proyecto escolar se construyó un **scraper** que luego se amplió, creando este dataset que incluye cada publicación de vehículos usados dentro de los Estados Unidos en Craigslist.
 
-El contexto de aplicación corresponde a **plataformas de compra-venta de autos usados**, donde los modelos predictivos pueden apoyar a compradores y vendedores en decisiones más informadas y transparentes.  
+---
 
-El proyecto se desarrolla con un **dataset real de autos usados** (ejemplo: Craigslist Cars & Trucks Dataset en Kaggle), e incluye las siguientes etapas:  
+## **Descripción del Dataset**
 
-- **Preprocesamiento de datos**: manejo de valores faltantes, codificación categórica y escalado.  
-- **Construcción de pipelines** que integran transformaciones y modelos (Ridge, Lasso y Logistic Regression).  
-- **Búsqueda de hiperparámetros** mediante **GridSearchCV con validación cruzada**.  
-- **Evaluación cuantitativa y visual** de los modelos de regresión (MAE, RMSE, R²) y clasificación (matriz de confusión, accuracy, precision, recall, F1-score, curva ROC y AUC).  
-- **Análisis comparativo** de los resultados y reflexión sobre el impacto de la regularización y las variables más influyentes.  
+El dataset proviene de **Craigslist Cars and Trucks Dataset (Kaggle)** y contiene información de más de **426,000 vehículos** listados en diferentes regiones de Estados Unidos.  
+Cuenta con **26 variables**, tanto numéricas como categóricas, relacionadas con el vehículo, el anuncio y su localización.  
 
-El resultado esperado es un notebook/documento bien estructurado, con explicaciones claras, gráficos ilustrativos y justificación de cada decisión técnica, ideal como evidencia de integración de conocimientos en aprendizaje automático aplicado.  
+- **Tamaño:** 426,880 registros × 26 columnas  
+- **Fuente:** Publicaciones en línea de Craigslist  
+- **Periodo de recolección:** Principalmente hasta mayo de 2021  
+
+---
+
+## **Variables del Dataset**
+
+| Variable        | Tipo       | Descripción |
+|-----------------|-----------|-------------|
+| `id`            | Entero    | Identificador único del anuncio |
+| `url`           | Texto     | Enlace al anuncio original (irrelevante para análisis) |
+| `region`        | Categórica| Región donde se publica el anuncio |
+| `region_url`    | Texto     | URL de la región (irrelevante) |
+| `price`         | Numérica  | Precio listado del vehículo (variable objetivo principal) |
+| `year`          | Numérica  | Año de fabricación |
+| `manufacturer`  | Categórica| Marca del vehículo |
+| `model`         | Categórica| Modelo del vehículo |
+| `condition`     | Categórica| Estado físico del auto (ej. "excellent", "good") |
+| `cylinders`     | Categórica| Número de cilindros del motor |
+| `fuel`          | Categórica| Tipo de combustible (gasolina, diésel, eléctrico, etc.) |
+| `odometer`      | Numérica  | Kilometraje recorrido (en millas) |
+| `title_status`  | Categórica| Estado legal del título (ej. "clean", "salvage") |
+| `transmission`  | Categórica| Tipo de transmisión (manual, automática) |
+| `VIN`           | Texto     | Número de identificación del vehículo (puede faltar) |
+| `drive`         | Categórica| Tracción (4WD, FWD, RWD) |
+| `size`          | Categórica| Tamaño del vehículo (compacto, mediano, grande) |
+| `type`          | Categórica| Tipo de vehículo (sedán, SUV, camioneta, etc.) |
+| `paint_color`   | Categórica| Color del auto |
+| `image_url`     | Texto     | Imagen del vehículo (irrelevante) |
+| `description`   | Texto     | Descripción del anuncio (texto libre, difícil de usar directamente) |
+| `county`        | Texto     | Condado (poco útil) |
+| `state`         | Categórica| Estado en EE.UU. |
+| `lat`, `long`   | Numérica  | Coordenadas geográficas |
+| `posting_date`  | Temporal  | Fecha de publicación del anuncio |
+
+---
+
+## **Observaciones importantes**
+
+- El dataset tiene **valores faltantes** en variables claves.
+- Existen **outliers** en `price`. 
+- Varias columnas (`url`, `image_url`, `description`, `region_url`) no son útiles para modelar y probablemente se descarten.  
+- Se trabaja en dos objetivos principales:  
+
+  1. **Regresión:** Estimar el precio de un vehículo (`price`).  
+  2. **Clasificación:** Determinar si un auto tiene **alta o baja demanda**, usando reglas de negocio (ej. número de publicaciones, precio competitivo). 
 
 ```{tableofcontents}
 ```

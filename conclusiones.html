@@ -6,7 +6,9 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Search - Mini Proyecto 2 - MachineLearning</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Análisis y Reporte Final &#8212; Mini Proyecto 2 - MachineLearning</title>
   
   
   
@@ -55,12 +57,10 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'search';</script>
-  <script src="_static/searchtools.js"></script>
-  <script src="_static/language_data.js"></script>
-  <script src="searchindex.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'conclusiones';</script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="#" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="ANÁLISIS EXPLORATORIO" href="Ridge_y_Lasso.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -92,7 +92,7 @@
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
-      action="#"
+      action="search.html"
       method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
   <input type="search"
@@ -122,8 +122,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -180,13 +178,13 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Ridge_y_Lasso.html"><strong>ANÁLISIS EXPLORATORIO</strong></a></li>
 
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="conclusiones.html"><strong>Análisis y Reporte Final</strong></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Análisis y Reporte Final</strong></a></li>
 </ul>
 
     </div>
@@ -258,7 +256,7 @@
       
       
       
-      <li><a href="https://github.com/MariFraRi/MiniProyecto2/issues/new?title=Issue%20on%20page%20%2Fsearch.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/MariFraRi/MiniProyecto2/issues/new?title=Issue%20on%20page%20%2Fconclusiones.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -270,6 +268,54 @@
   </span>
 <span class="btn__text-container">Open issue</span>
 </a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/conclusiones.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
 </li>
       
   </ul>
@@ -311,7 +357,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -320,42 +368,135 @@ document.write(`
 </div>
               
               
-  <div class="bd-search-container">
-    <h1>Search</h1>
-    <noscript>
-      <div class="admonition error">
-        <p class="admonition-title">Error</p>
-        <p>Please activate JavaScript to enable the search functionality.</p>
-      </div>
-    </noscript>
-    
-<form class="bd-search d-flex align-items-center"
-      action="#"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-    <div id="search-results"></div>
-  </div>
-  <script>
-    // Activate the search field on page load
-    let searchInput = document.querySelector("form.bd-search input");
-    if (searchInput) {
-        searchInput.focus();
-        searchInput.select();
-        console.log("[PST]: Set focus on search field.");
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Análisis y Reporte Final</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-de-modelos-y-valores-optimos-de-regularizacion"><strong>Comparación de modelos y valores óptimos de regularización</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-que-afectan-mas-la-demanda-y-el-precio"><strong>Variables que afectan más la demanda y el precio</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#efecto-de-la-regularizacion-en-la-capacidad-de-generalizacion"><strong>Efecto de la regularización en la capacidad de generalización</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resultados-y-visualizacion"><strong>Resultados y visualización</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-general"><strong>Conclusión general</strong></a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="analisis-y-reporte-final">
+<h1><strong>Análisis y Reporte Final</strong><a class="headerlink" href="#analisis-y-reporte-final" title="Link to this heading">#</a></h1>
+<section id="comparacion-de-modelos-y-valores-optimos-de-regularizacion">
+<h2><strong>Comparación de modelos y valores óptimos de regularización</strong><a class="headerlink" href="#comparacion-de-modelos-y-valores-optimos-de-regularizacion" title="Link to this heading">#</a></h2>
+<p>Se entrenaron y evaluaron distintos modelos de regresión y clasificación:</p>
+<ul class="simple">
+<li><p><strong>Regresión</strong></p>
+<ul>
+<li><p>Ridge: mejor desempeño (R² ≈ 0.66, MAE ≈ 5,242, RMSE ≈ 8,225).</p></li>
+<li><p>Lasso: desempeño más bajo (R² ≈ 0.46), indicando una regularización excesiva.</p></li>
+<li><p>Valores óptimos de regularización (<code class="docutils literal notranslate"><span class="pre">alpha</span></code>):</p>
+<ul>
+<li><p>Ridge → α óptimo ≈ 1</p></li>
+<li><p>Lasso → α óptimo ≈ 0.1</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Clasificación (Regresión Logística):</strong></p>
+<ul>
+<li><p>Accuracy, Precision, Recall, y F1 ≈ 0.86</p></li>
+<li><p>AUC = 0.938 → excelente poder de discriminación.</p></li>
+<li><p>El parámetro de regularización (C inverso a λ) mostró que valores intermedios logran el mejor equilibrio.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="variables-que-afectan-mas-la-demanda-y-el-precio">
+<h2><strong>Variables que afectan más la demanda y el precio</strong><a class="headerlink" href="#variables-que-afectan-mas-la-demanda-y-el-precio" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Precio (regresión):</strong></p>
+<ul>
+<li><p>Variables con mayor impacto: <code class="docutils literal notranslate"><span class="pre">anio</span></code>, <code class="docutils literal notranslate"><span class="pre">odometro</span></code>, <code class="docutils literal notranslate"><span class="pre">fabricante</span></code>, <code class="docutils literal notranslate"><span class="pre">tipo</span></code>.</p></li>
+<li><p>La variable <code class="docutils literal notranslate"><span class="pre">anio</span></code> (edad del auto) se relaciona fuertemente con un mayor precio.</p></li>
+<li><p>El <code class="docutils literal notranslate"><span class="pre">odometro</span></code> (kilometraje) tiene un efecto negativo sobre el precio.</p></li>
+</ul>
+</li>
+<li><p><strong>Demanda (clasificación):</strong></p>
+<ul>
+<li><p>Variables más influyentes: <code class="docutils literal notranslate"><span class="pre">precio</span></code>, <code class="docutils literal notranslate"><span class="pre">anio</span></code>, <code class="docutils literal notranslate"><span class="pre">tipo</span></code>, <code class="docutils literal notranslate"><span class="pre">traccion</span></code>.</p></li>
+<li><p>Autos recientes y con menor kilometraje tienen mayor probabilidad de estar en alta demanda.</p></li>
+<li><p>Algunas categorías de <code class="docutils literal notranslate"><span class="pre">tipo</span></code> (ej. SUV) concentran más interés.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="efecto-de-la-regularizacion-en-la-capacidad-de-generalizacion">
+<h2><strong>Efecto de la regularización en la capacidad de generalización</strong><a class="headerlink" href="#efecto-de-la-regularizacion-en-la-capacidad-de-generalizacion" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>La regularización (Ridge y Lasso) evitó el sobreajuste al penalizar coeficientes grandes.</p></li>
+<li><p><strong>Ridge</strong> mejoró la estabilidad y redujo el error en test respecto a la regresión lineal básica.</p></li>
+<li><p><strong>Lasso</strong> eliminó algunas variables irrelevantes, aunque sacrificando capacidad predictiva en este dataset.</p></li>
+<li><p>En clasificación, la <strong>regularización L2</strong> en la Regresión Logística permitió mantener un buen equilibrio entre precisión y recall.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="resultados-y-visualizacion">
+<h2><strong>Resultados y visualización</strong><a class="headerlink" href="#resultados-y-visualizacion" title="Link to this heading">#</a></h2>
+<p>Los resultados se presentaron con:</p>
+<ul class="simple">
+<li><p>Histogramas y boxplots para analizar distribuciones y outliers.</p></li>
+<li><p>Gráficos <strong>Real vs. Predicho</strong> para regresión.</p></li>
+<li><p><strong>Matriz de confusión</strong> y <strong>curva ROC</strong> para clasificación.</p></li>
+<li><p>Métricas comparativas (MAE, RMSE, R², Accuracy, Precision, Recall, F1, AUC).</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="conclusion-general">
+<h2><strong>Conclusión general</strong><a class="headerlink" href="#conclusion-general" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>La regularización <strong>sí mejora la generalización</strong>, siendo Ridge el mejor en regresión y la Regresión Logística en clasificación.</p></li>
+<li><p>Las variables más relevantes están asociadas con <strong>edad, kilometraje y tipo de vehículo</strong>, lo que coincide con la lógica del mercado automotriz.</p></li>
+<li><p>Los modelos ofrecen una base sólida para predecir precios y clasificar demanda, con margen de mejora aplicando modelos más complejos como <strong>Random Forest o XGBoost</strong>.</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
     }
-  </script>
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
 
               
               
@@ -364,12 +505,40 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="Ridge_y_Lasso.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><strong>ANÁLISIS EXPLORATORIO</strong></p>
+      </div>
+    </a>
 </div>
                 </footer>
               
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-de-modelos-y-valores-optimos-de-regularizacion"><strong>Comparación de modelos y valores óptimos de regularización</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-que-afectan-mas-la-demanda-y-el-precio"><strong>Variables que afectan más la demanda y el precio</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#efecto-de-la-regularizacion-en-la-capacidad-de-generalizacion"><strong>Efecto de la regularización en la capacidad de generalización</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resultados-y-visualizacion"><strong>Resultados y visualización</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-general"><strong>Conclusión general</strong></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
