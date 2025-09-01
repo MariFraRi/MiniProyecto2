@@ -1193,75 +1193,59 @@ En cambio, <code class="docutils literal notranslate"><span class="pre">region</
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\franc\anaconda3\envs\ml_env\Lib\site-packages\dython\nominal.py:558: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option(&#39;future.no_silent_downcasting&#39;, True)`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c:\Users\franc\anaconda3\envs\ml_env\Lib\site-packages\dython\nominal.py:558: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option(&#39;future.no_silent_downcasting&#39;, True)`
   df.fillna(nan_replace_value, inplace=True)
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">associations</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
-
-<span class="nn">File ~\anaconda3\envs\ml_env\Lib\site-packages\dython\nominal.py:705,</span> in <span class="ni">associations</span><span class="nt">(dataset, nominal_columns, numerical_columns, mark_columns, nom_nom_assoc, num_num_assoc, nom_num_assoc, symmetric_nom_nom, symmetric_num_num, display_rows, display_columns, hide_rows, hide_columns, cramers_v_bias_correction, nan_strategy, nan_replace_value, ax, figsize, annot, fmt, cmap, sv_color, cbar, vmax, vmin, plot, compute_only, clustering, title, filename, multiprocessing, max_cpu_cores)</span>
-<span class="g g-Whitespace">    </span><span class="mi">702</span>     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">columns</span><span class="p">)):</span>
-<span class="g g-Whitespace">    </span><span class="mi">703</span>         <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">columns</span><span class="p">)):</span>
-<span class="g g-Whitespace">    </span><span class="mi">704</span>             <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-<span class="ne">--&gt; </span><span class="mi">705</span>                 <span class="n">_compute_associations</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">706</span>                     <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">),</span>
-<span class="g g-Whitespace">    </span><span class="mi">707</span>                     <span class="n">df</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">708</span>                     <span class="n">displayed_features_set</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">709</span>                     <span class="n">single_value_columns_set</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">710</span>                     <span class="n">nominal_columns</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">711</span>                     <span class="n">symmetric_nom_nom</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">712</span>                     <span class="n">nom_nom_assoc</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">713</span>                     <span class="n">cramers_v_bias_correction</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">714</span>                     <span class="n">num_num_assoc</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">715</span>                     <span class="n">nom_num_assoc</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">716</span>                     <span class="n">symmetric_num_num</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">717</span>                     <span class="n">nan_strategy</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">718</span>                 <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">719</span>             <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">721</span> <span class="c1"># fill the correlation dataframe with the results</span>
-<span class="g g-Whitespace">    </span><span class="mi">722</span> <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
-
-<span class="nn">File ~\anaconda3\envs\ml_env\Lib\site-packages\dython\nominal.py:1146,</span> in <span class="ni">_compute_associations</span><span class="nt">(indices_pair, dataset, displayed_features_set, single_value_columns_set, nominal_columns, symmetric_nom_nom, nom_nom_assoc, cramers_v_bias_correction, num_num_assoc, nom_num_assoc, symmetric_num_num, nan_strategy)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1142</span>             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1143</span>                 <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">nom_nom_assoc</span><span class="si">}</span><span class="s2"> is not a supported nominal-nominal association&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1144</span>             <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1145</span>     <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1146</span>         <span class="n">ij</span><span class="p">,</span> <span class="n">ji</span> <span class="o">=</span> <span class="n">_nom_num</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1147</span>             <span class="n">nom_column</span><span class="o">=</span><span class="n">c_i</span><span class="p">,</span> <span class="n">num_column</span><span class="o">=</span><span class="n">c_j</span><span class="p">,</span> <span class="n">nom_num_assoc</span><span class="o">=</span><span class="n">nom_num_assoc</span>
-<span class="g g-Whitespace">   </span><span class="mi">1148</span>         <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1149</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1150</span>     <span class="k">if</span> <span class="n">columns</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="ow">in</span> <span class="n">nominal_columns</span><span class="p">:</span>
-
-<span class="nn">File ~\anaconda3\envs\ml_env\Lib\site-packages\dython\nominal.py:1005,</span> in <span class="ni">_nom_num</span><span class="nt">(nom_column, num_column, nom_num_assoc)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1003</span>     <span class="n">ji</span> <span class="o">=</span> <span class="n">cell</span>
-<span class="g g-Whitespace">   </span><span class="mi">1004</span> <span class="k">elif</span> <span class="n">nom_num_assoc</span> <span class="o">==</span> <span class="s2">&quot;correlation_ratio&quot;</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1005</span>     <span class="n">cell</span> <span class="o">=</span> <span class="n">correlation_ratio</span><span class="p">(</span><span class="n">nom_column</span><span class="p">,</span> <span class="n">num_column</span><span class="p">,</span> <span class="n">nan_strategy</span><span class="o">=</span><span class="n">_SKIP</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1006</span>     <span class="n">ij</span> <span class="o">=</span> <span class="n">cell</span>
-<span class="g g-Whitespace">   </span><span class="mi">1007</span>     <span class="n">ji</span> <span class="o">=</span> <span class="n">cell</span>
-
-<span class="nn">File ~\anaconda3\envs\ml_env\Lib\site-packages\dython\nominal.py:306,</span> in <span class="ni">correlation_ratio</span><span class="nt">(categories, measurements, nan_strategy, nan_replace_value)</span>
-<span class="g g-Whitespace">    </span><span class="mi">304</span> <span class="n">n_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">cat_num</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">305</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">cat_num</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">306</span>     <span class="n">cat_measures</span> <span class="o">=</span> <span class="n">measurements_array</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span><span class="n">fcat</span> <span class="o">==</span> <span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">flatten</span><span class="p">()]</span>
-<span class="g g-Whitespace">    </span><span class="mi">307</span>     <span class="n">n_array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">cat_measures</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">308</span>     <span class="n">y_avg_array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">cat_measures</span><span class="p">)</span>
-
-<span class="nn">File ~\anaconda3\envs\ml_env\Lib\site-packages\numpy\_core\numeric.py:621,</span> in <span class="ni">_argwhere_dispatcher</span><span class="nt">(a)</span>
-<span class="g g-Whitespace">    </span><span class="mi">556</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">557</span><span class="sd">     Check if the array is Fortran contiguous but *not* C contiguous.</span>
-<span class="g g-Whitespace">    </span><span class="mi">558</span><span class="sd"> </span>
-<span class="sd">   (...)    616 </span>
-<span class="g g-Whitespace">    </span><span class="mi">617</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">618</span>     <span class="k">return</span> <span class="n">a</span><span class="o">.</span><span class="n">flags</span><span class="o">.</span><span class="n">fnc</span>
-<span class="ne">--&gt; </span><span class="mi">621</span> <span class="k">def</span><span class="w"> </span><span class="nf">_argwhere_dispatcher</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">622</span>     <span class="k">return</span> <span class="p">(</span><span class="n">a</span><span class="p">,)</span>
-<span class="g g-Whitespace">    </span><span class="mi">625</span> <span class="nd">@array_function_dispatch</span><span class="p">(</span><span class="n">_argwhere_dispatcher</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">626</span> <span class="k">def</span><span class="w"> </span><span class="nf">argwhere</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
+<img alt="_images/8023aa20ed24d5e836611cdf5b9848a35d23419fdead48c904af0a47bfaa80f2.png" src="_images/8023aa20ed24d5e836611cdf5b9848a35d23419fdead48c904af0a47bfaa80f2.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;corr&#39;:                  region    precio      anio  fabricante    modelo  condicion  \
+ region         1.000000  0.024676  0.195793    0.061874  0.091938   0.176913   
+ precio         0.024676  1.000000 -0.000270    0.008591  0.113581   0.007526   
+ anio           0.195793 -0.000270  1.000000    0.266750  0.936490   0.059325   
+ fabricante     0.061874  0.008591  0.266750    1.000000  0.927879   0.081406   
+ modelo         0.091938  0.113581  0.936490    0.927879  1.000000   0.415712   
+ condicion      0.176913  0.007526  0.059325    0.081406  0.415712   1.000000   
+ combustible    0.139279  0.001202  0.136826    0.313930  0.724344   0.130966   
+ odometro       0.092364  0.010047  0.003139    0.071170  0.554846   0.090948   
+ estado_titulo  0.135414  0.001151  0.095693    0.038551  0.403921   0.117363   
+ transmision    0.198305  0.002862  0.052644    0.166294  0.611371   0.336336   
+ traccion       0.193923  0.003372  0.012835    0.325085  0.639084   0.142957   
+ tipo           0.116672  0.006362  0.048930    0.228458  0.667632   0.155862   
+ color_pintura  0.081596  0.006070  0.024330    0.082720  0.347608   0.124828   
+ estado         0.984856  0.014291  0.095054    0.043775  0.192138   0.117505   
+ 
+                combustible  odometro  estado_titulo  transmision  traccion  \
+ region            0.139279  0.092364       0.135414     0.198305  0.193923   
+ precio            0.001202  0.010047       0.001151     0.002862  0.003372   
+ anio              0.136826  0.003139       0.095693     0.052644  0.012835   
+ fabricante        0.313930  0.071170       0.038551     0.166294  0.325085   
+ modelo            0.724344  0.554846       0.403921     0.611371  0.639084   
+ condicion         0.130966  0.090948       0.117363     0.336336  0.142957   
+ combustible       1.000000  0.072226       0.108991     0.252090  0.125674   
+ odometro          0.072226  1.000000       0.047561     0.121338  0.019177   
+ estado_titulo     0.108991  0.047561       1.000000     0.096241  0.056405   
+ transmision       0.252090  0.121338       0.096241     1.000000  0.101837   
+ traccion          0.125674  0.019177       0.056405     0.101837  1.000000   
+ tipo              0.197513  0.091350       0.042580     0.246375  0.457580   
+ color_pintura     0.070945  0.039553       0.071361     0.108623  0.222647   
+ estado            0.079675  0.040662       0.077733     0.116405  0.155081   
+ 
+                    tipo  color_pintura    estado  
+ region         0.116672       0.081596  0.984856  
+ precio         0.006362       0.006070  0.014291  
+ anio           0.048930       0.024330  0.095054  
+ fabricante     0.228458       0.082720  0.043775  
+ modelo         0.667632       0.347608  0.192138  
+ condicion      0.155862       0.124828  0.117505  
+ combustible    0.197513       0.070945  0.079675  
+ odometro       0.091350       0.039553  0.040662  
+ estado_titulo  0.042580       0.071361  0.077733  
+ transmision    0.246375       0.108623  0.116405  
+ traccion       0.457580       0.222647  0.155081  
+ tipo           1.000000       0.155819  0.078062  
+ color_pintura  0.155819       1.000000  0.053863  
+ estado         0.078062       0.053863  1.000000  ,
+ &#39;ax&#39;: &lt;Axes: &gt;}
 </pre></div>
 </div>
 </div>
@@ -1406,12 +1390,35 @@ En cambio, <code class="docutils literal notranslate"><span class="pre">region</
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Variables categóricas:
+[&#39;region&#39;, &#39;anio&#39;, &#39;fabricante&#39;, &#39;modelo&#39;, &#39;condicion&#39;, &#39;combustible&#39;, &#39;estado_titulo&#39;, &#39;transmision&#39;, &#39;traccion&#39;, &#39;tipo&#39;, &#39;color_pintura&#39;, &#39;estado&#39;]
+</pre></div>
+</div>
+</div>
 </div>
 <p>Cantidad de clases en variables categoricas</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unique_counts</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">cat_cols_</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">unique_counts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>modelo           29667
+region             404
+anio               114
+estado              51
+fabricante          42
+tipo                13
+color_pintura       12
+condicion            6
+estado_titulo        6
+combustible          5
+transmision          3
+traccion             3
+dtype: int64
 </pre></div>
 </div>
 </div>
@@ -1454,6 +1461,12 @@ En cambio, <code class="docutils literal notranslate"><span class="pre">region</
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Variables numéricas:
+[&#39;precio&#39;, &#39;odometro&#39;, &#39;fabricante_es_nulo&#39;, &#39;modelo_es_nulo&#39;, &#39;condicion_es_nulo&#39;, &#39;tipo_es_nulo&#39;]
+</pre></div>
+</div>
+</div>
 </div>
 <section id="odometro">
 <h3><strong><code class="docutils literal notranslate"><span class="pre">Odometro</span></code></strong><a class="headerlink" href="#odometro" title="Link to this heading">#</a></h3>
@@ -1473,6 +1486,9 @@ En cambio, <code class="docutils literal notranslate"><span class="pre">region</
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/c82bec90303c7a04278b6509655d92aa3001fae4d2860c803a13f316c74085e4.png" src="_images/c82bec90303c7a04278b6509655d92aa3001fae4d2860c803a13f316c74085e4.png" />
+</div>
 </div>
 <p>Este es el diagrama de cajas de la variable representativa del kilometraje, podemos observar presencia de outliers y muy probablemente valores imposibles dentro del contexto.</p>
 <div class="cell docutils container">
@@ -1485,6 +1501,9 @@ En cambio, <code class="docutils literal notranslate"><span class="pre">region</
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/506c8b2544196a49ff7a49e2cccf985ca4278fe7621ed846a1bd799ed8b5db92.png" src="_images/506c8b2544196a49ff7a49e2cccf985ca4278fe7621ed846a1bd799ed8b5db92.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1494,6 +1513,9 @@ En cambio, <code class="docutils literal notranslate"><span class="pre">region</
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/4b71970230503f146e1b934cc49509c6ea4b4c565a4bac2b1de68057355e5a7e.png" src="_images/4b71970230503f146e1b934cc49509c6ea4b4c565a4bac2b1de68057355e5a7e.png" />
 </div>
 </div>
 <p>La variable <code class="docutils literal notranslate"><span class="pre">odometro</span></code> presenta un alto número de valores extremos que superan ampliamente los rangos coherentes de kilometraje para un vehículo. Estos registros, que alcanzan incluso cifras cercanas a los diez millones, son considerados <strong>valores imposibles</strong> ya que no corresponden a condiciones reales de uso y probablemente se deban a errores de digitación o de registro.</p>
@@ -1506,6 +1528,13 @@ En cambio, <code class="docutils literal notranslate"><span class="pre">region</
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---- D’Agostino &amp; Pearson ----&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Estadístico: </span><span class="si">{</span><span class="n">k2</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, p-valor: </span><span class="si">{</span><span class="n">p</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Interpretación:&quot;</span><span class="p">,</span> <span class="s2">&quot;Normal&quot;</span> <span class="k">if</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="mf">0.05</span> <span class="k">else</span> <span class="s2">&quot;No Normal&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>---- D’Agostino &amp; Pearson ----
+Estadístico: 1197411.074, p-valor: 0.000
+Interpretación: No Normal
 </pre></div>
 </div>
 </div>
@@ -1524,6 +1553,18 @@ En cambio, <code class="docutils literal notranslate"><span class="pre">region</
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>---- Anderson-Darling ----
+Estadístico: 72920.642
+Nivel de significancia 15.0%: valor crítico 0.576
+Nivel de significancia 10.0%: valor crítico 0.656
+Nivel de significancia 5.0%: valor crítico 0.787
+Nivel de significancia 2.5%: valor crítico 0.918
+Nivel de significancia 1.0%: valor crítico 1.092
+Interpretación: No Normal
+</pre></div>
+</div>
+</div>
 </div>
 <p>Ambos métodos permiten tener una visión más robusta: mientras que D’Agostino &amp; Pearson analiza la forma general de la distribución, Anderson-Darling es más sensible a los valores en los extremos. En conjunto, ofrecen evidencia suficiente para concluir si la variable se ajusta o no a la normalidad.</p>
 </section>
@@ -1537,6 +1578,9 @@ En cambio, <code class="docutils literal notranslate"><span class="pre">region</
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/ac4453bf4197b5af0675d6c93c4a697cc45d4df77a46f2282f446b96bef433f0.png" src="_images/ac4453bf4197b5af0675d6c93c4a697cc45d4df77a46f2282f446b96bef433f0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1547,6 +1591,9 @@ En cambio, <code class="docutils literal notranslate"><span class="pre">region</
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/302e9b52acc0fa517f315e545226d7e6b8ae31158ac2c574b40fad706dfc9f34.png" src="_images/302e9b52acc0fa517f315e545226d7e6b8ae31158ac2c574b40fad706dfc9f34.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1555,6 +1602,9 @@ En cambio, <code class="docutils literal notranslate"><span class="pre">region</
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/459c0035fa9c67efb234b6cdd73ec09205d1a8b4dc50301926d53f18a0f8dbe6.png" src="_images/459c0035fa9c67efb234b6cdd73ec09205d1a8b4dc50301926d53f18a0f8dbe6.png" />
 </div>
 </div>
 <p>La variable <code class="docutils literal notranslate"><span class="pre">precio</span></code> presenta una gran cantidad de valores extremos que no corresponden a precios reales de vehículos. En el análisis exploratorio se identificaron registros con valores cercanos a miles de millones, lo cual es imposible en el contexto del mercado de autos usados. Estos registros son considerados <strong>valores imposibles</strong> y, al igual que en el caso de <code class="docutils literal notranslate"><span class="pre">odometro</span></code>, se opta por tratar los outliers.</p>
@@ -1619,41 +1669,41 @@ En cambio, <code class="docutils literal notranslate"><span class="pre">region</
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\franc\AppData\Local\Temp\ipykernel_9536\3482083034.py:10: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\franc\AppData\Local\Temp\ipykernel_6308\3482083034.py:10: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
 The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
 
 For example, when doing &#39;df[col].method(value, inplace=True)&#39;, try using &#39;df.method({col: value}, inplace=True)&#39; or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
 
 
   X_train_reg[col].fillna(moda_reg, inplace=True)
-C:\Users\franc\AppData\Local\Temp\ipykernel_9536\3482083034.py:11: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+C:\Users\franc\AppData\Local\Temp\ipykernel_6308\3482083034.py:11: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
 The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
 
 For example, when doing &#39;df[col].method(value, inplace=True)&#39;, try using &#39;df.method({col: value}, inplace=True)&#39; or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
 
 
   X_test_reg[col].fillna(moda_reg, inplace=True)
-C:\Users\franc\AppData\Local\Temp\ipykernel_9536\3482083034.py:12: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+C:\Users\franc\AppData\Local\Temp\ipykernel_6308\3482083034.py:12: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
 The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
 
 For example, when doing &#39;df[col].method(value, inplace=True)&#39;, try using &#39;df.method({col: value}, inplace=True)&#39; or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
 
 
   X_train_clf[col].fillna(moda_clf, inplace=True)
-C:\Users\franc\AppData\Local\Temp\ipykernel_9536\3482083034.py:13: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+C:\Users\franc\AppData\Local\Temp\ipykernel_6308\3482083034.py:13: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
 The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
 
 For example, when doing &#39;df[col].method(value, inplace=True)&#39;, try using &#39;df.method({col: value}, inplace=True)&#39; or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
 
 
   X_test_clf[col].fillna(moda_clf, inplace=True)
-C:\Users\franc\AppData\Local\Temp\ipykernel_9536\3482083034.py:10: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option(&#39;future.no_silent_downcasting&#39;, True)`
+C:\Users\franc\AppData\Local\Temp\ipykernel_6308\3482083034.py:10: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option(&#39;future.no_silent_downcasting&#39;, True)`
   X_train_reg[col].fillna(moda_reg, inplace=True)
-C:\Users\franc\AppData\Local\Temp\ipykernel_9536\3482083034.py:11: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option(&#39;future.no_silent_downcasting&#39;, True)`
+C:\Users\franc\AppData\Local\Temp\ipykernel_6308\3482083034.py:11: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option(&#39;future.no_silent_downcasting&#39;, True)`
   X_test_reg[col].fillna(moda_reg, inplace=True)
-C:\Users\franc\AppData\Local\Temp\ipykernel_9536\3482083034.py:12: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option(&#39;future.no_silent_downcasting&#39;, True)`
+C:\Users\franc\AppData\Local\Temp\ipykernel_6308\3482083034.py:12: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option(&#39;future.no_silent_downcasting&#39;, True)`
   X_train_clf[col].fillna(moda_clf, inplace=True)
-C:\Users\franc\AppData\Local\Temp\ipykernel_9536\3482083034.py:13: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option(&#39;future.no_silent_downcasting&#39;, True)`
+C:\Users\franc\AppData\Local\Temp\ipykernel_6308\3482083034.py:13: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option(&#39;future.no_silent_downcasting&#39;, True)`
   X_test_clf[col].fillna(moda_clf, inplace=True)
 </pre></div>
 </div>
@@ -1701,6 +1751,9 @@ C:\Users\franc\AppData\Local\Temp\ipykernel_9536\3482083034.py:13: FutureWarning
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ebbac4306a2507e8834026fc490bf830a4ed105ae6ddc320281cb7b2054181f7.png" src="_images/ebbac4306a2507e8834026fc490bf830a4ed105ae6ddc320281cb7b2054181f7.png" />
 </div>
 </div>
 <p>La variable <code class="docutils literal notranslate"><span class="pre">odometro</span></code> presentaba una distribución altamente sesgada hacia la derecha, con valores extremos que dificultaban su uso en modelos lineales. Estos algoritmos son sensibles a la presencia de outliers, ya que los valores muy grandes pueden dominar la varianza y afectar negativamente la estimación de los coeficientes.</p>
@@ -1800,6 +1853,9 @@ C:\Users\franc\AppData\Local\Temp\ipykernel_9536\3482083034.py:13: FutureWarning
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/3b91f376c29b4950f016151a70abcb1c53f11eab3c31fd88314409fa82f6982b.png" src="_images/3b91f376c29b4950f016151a70abcb1c53f11eab3c31fd88314409fa82f6982b.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1808,6 +1864,9 @@ C:\Users\franc\AppData\Local\Temp\ipykernel_9536\3482083034.py:13: FutureWarning
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/85ae6acc4520021da9bda6b8a56a4e026ea2c2a820364f5e6e144abf4b861bab.png" src="_images/85ae6acc4520021da9bda6b8a56a4e026ea2c2a820364f5e6e144abf4b861bab.png" />
 </div>
 </div>
 <p>Como consecuencia, la distribución se volvió más simétrica y no hay presencia de outliers, lo que mejora la estabilidad y desempeño de los modelos lineales que se construyan.</p>
@@ -2944,1083 +3003,6 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style>#sk-container-id-1 {
-  /* Definition of color scheme common for light and dark mode */
-  --sklearn-color-text: #000;
-  --sklearn-color-text-muted: #666;
-  --sklearn-color-line: gray;
-  /* Definition of color scheme for unfitted estimators */
-  --sklearn-color-unfitted-level-0: #fff5e6;
-  --sklearn-color-unfitted-level-1: #f6e4d2;
-  --sklearn-color-unfitted-level-2: #ffe0b3;
-  --sklearn-color-unfitted-level-3: chocolate;
-  /* Definition of color scheme for fitted estimators */
-  --sklearn-color-fitted-level-0: #f0f8ff;
-  --sklearn-color-fitted-level-1: #d4ebff;
-  --sklearn-color-fitted-level-2: #b3dbfd;
-  --sklearn-color-fitted-level-3: cornflowerblue;
-
-  /* Specific color for light theme */
-  --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
-  --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, white)));
-  --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
-  --sklearn-color-icon: #696969;
-
-  @media (prefers-color-scheme: dark) {
-    /* Redefinition of color scheme for dark theme */
-    --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
-    --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, #111)));
-    --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
-    --sklearn-color-icon: #878787;
-  }
-}
-
-#sk-container-id-1 {
-  color: var(--sklearn-color-text);
-}
-
-#sk-container-id-1 pre {
-  padding: 0;
-}
-
-#sk-container-id-1 input.sk-hidden--visually {
-  border: 0;
-  clip: rect(1px 1px 1px 1px);
-  clip: rect(1px, 1px, 1px, 1px);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
-#sk-container-id-1 div.sk-dashed-wrapped {
-  border: 1px dashed var(--sklearn-color-line);
-  margin: 0 0.4em 0.5em 0.4em;
-  box-sizing: border-box;
-  padding-bottom: 0.4em;
-  background-color: var(--sklearn-color-background);
-}
-
-#sk-container-id-1 div.sk-container {
-  /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
-     but bootstrap.min.css set `[hidden] { display: none !important; }`
-     so we also need the `!important` here to be able to override the
-     default hidden behavior on the sphinx rendered scikit-learn.org.
-     See: https://github.com/scikit-learn/scikit-learn/issues/21755 */
-  display: inline-block !important;
-  position: relative;
-}
-
-#sk-container-id-1 div.sk-text-repr-fallback {
-  display: none;
-}
-
-div.sk-parallel-item,
-div.sk-serial,
-div.sk-item {
-  /* draw centered vertical line to link estimators */
-  background-image: linear-gradient(var(--sklearn-color-text-on-default-background), var(--sklearn-color-text-on-default-background));
-  background-size: 2px 100%;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-/* Parallel-specific style estimator block */
-
-#sk-container-id-1 div.sk-parallel-item::after {
-  content: "";
-  width: 100%;
-  border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
-  flex-grow: 1;
-}
-
-#sk-container-id-1 div.sk-parallel {
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-  background-color: var(--sklearn-color-background);
-  position: relative;
-}
-
-#sk-container-id-1 div.sk-parallel-item {
-  display: flex;
-  flex-direction: column;
-}
-
-#sk-container-id-1 div.sk-parallel-item:first-child::after {
-  align-self: flex-end;
-  width: 50%;
-}
-
-#sk-container-id-1 div.sk-parallel-item:last-child::after {
-  align-self: flex-start;
-  width: 50%;
-}
-
-#sk-container-id-1 div.sk-parallel-item:only-child::after {
-  width: 0;
-}
-
-/* Serial-specific style estimator block */
-
-#sk-container-id-1 div.sk-serial {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: var(--sklearn-color-background);
-  padding-right: 1em;
-  padding-left: 1em;
-}
-
-
-/* Toggleable style: style used for estimator/Pipeline/ColumnTransformer box that is
-clickable and can be expanded/collapsed.
-- Pipeline and ColumnTransformer use this feature and define the default style
-- Estimators will overwrite some part of the style using the `sk-estimator` class
-*/
-
-/* Pipeline and ColumnTransformer style (default) */
-
-#sk-container-id-1 div.sk-toggleable {
-  /* Default theme specific background. It is overwritten whether we have a
-  specific estimator or a Pipeline/ColumnTransformer */
-  background-color: var(--sklearn-color-background);
-}
-
-/* Toggleable label */
-#sk-container-id-1 label.sk-toggleable__label {
-  cursor: pointer;
-  display: flex;
-  width: 100%;
-  margin-bottom: 0;
-  padding: 0.5em;
-  box-sizing: border-box;
-  text-align: center;
-  align-items: start;
-  justify-content: space-between;
-  gap: 0.5em;
-}
-
-#sk-container-id-1 label.sk-toggleable__label .caption {
-  font-size: 0.6rem;
-  font-weight: lighter;
-  color: var(--sklearn-color-text-muted);
-}
-
-#sk-container-id-1 label.sk-toggleable__label-arrow:before {
-  /* Arrow on the left of the label */
-  content: "▸";
-  float: left;
-  margin-right: 0.25em;
-  color: var(--sklearn-color-icon);
-}
-
-#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {
-  color: var(--sklearn-color-text);
-}
-
-/* Toggleable content - dropdown */
-
-#sk-container-id-1 div.sk-toggleable__content {
-  display: none;
-  text-align: left;
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-0);
-}
-
-#sk-container-id-1 div.sk-toggleable__content.fitted {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-0);
-}
-
-#sk-container-id-1 div.sk-toggleable__content pre {
-  margin: 0.2em;
-  border-radius: 0.25em;
-  color: var(--sklearn-color-text);
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-0);
-}
-
-#sk-container-id-1 div.sk-toggleable__content.fitted pre {
-  /* unfitted */
-  background-color: var(--sklearn-color-fitted-level-0);
-}
-
-#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {
-  /* Expand drop-down */
-  display: block;
-  width: 100%;
-  overflow: visible;
-}
-
-#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
-  content: "▾";
-}
-
-/* Pipeline/ColumnTransformer-specific style */
-
-#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
-  color: var(--sklearn-color-text);
-  background-color: var(--sklearn-color-unfitted-level-2);
-}
-
-#sk-container-id-1 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
-  background-color: var(--sklearn-color-fitted-level-2);
-}
-
-/* Estimator-specific style */
-
-/* Colorize estimator box */
-#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-2);
-}
-
-#sk-container-id-1 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-2);
-}
-
-#sk-container-id-1 div.sk-label label.sk-toggleable__label,
-#sk-container-id-1 div.sk-label label {
-  /* The background is the default theme color */
-  color: var(--sklearn-color-text-on-default-background);
-}
-
-/* On hover, darken the color of the background */
-#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {
-  color: var(--sklearn-color-text);
-  background-color: var(--sklearn-color-unfitted-level-2);
-}
-
-/* Label box, darken color on hover, fitted */
-#sk-container-id-1 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
-  color: var(--sklearn-color-text);
-  background-color: var(--sklearn-color-fitted-level-2);
-}
-
-/* Estimator label */
-
-#sk-container-id-1 div.sk-label label {
-  font-family: monospace;
-  font-weight: bold;
-  display: inline-block;
-  line-height: 1.2em;
-}
-
-#sk-container-id-1 div.sk-label-container {
-  text-align: center;
-}
-
-/* Estimator-specific */
-#sk-container-id-1 div.sk-estimator {
-  font-family: monospace;
-  border: 1px dotted var(--sklearn-color-border-box);
-  border-radius: 0.25em;
-  box-sizing: border-box;
-  margin-bottom: 0.5em;
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-0);
-}
-
-#sk-container-id-1 div.sk-estimator.fitted {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-0);
-}
-
-/* on hover */
-#sk-container-id-1 div.sk-estimator:hover {
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-2);
-}
-
-#sk-container-id-1 div.sk-estimator.fitted:hover {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-2);
-}
-
-/* Specification for estimator info (e.g. "i" and "?") */
-
-/* Common style for "i" and "?" */
-
-.sk-estimator-doc-link,
-a:link.sk-estimator-doc-link,
-a:visited.sk-estimator-doc-link {
-  float: right;
-  font-size: smaller;
-  line-height: 1em;
-  font-family: monospace;
-  background-color: var(--sklearn-color-background);
-  border-radius: 1em;
-  height: 1em;
-  width: 1em;
-  text-decoration: none !important;
-  margin-left: 0.5em;
-  text-align: center;
-  /* unfitted */
-  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
-  color: var(--sklearn-color-unfitted-level-1);
-}
-
-.sk-estimator-doc-link.fitted,
-a:link.sk-estimator-doc-link.fitted,
-a:visited.sk-estimator-doc-link.fitted {
-  /* fitted */
-  border: var(--sklearn-color-fitted-level-1) 1pt solid;
-  color: var(--sklearn-color-fitted-level-1);
-}
-
-/* On hover */
-div.sk-estimator:hover .sk-estimator-doc-link:hover,
-.sk-estimator-doc-link:hover,
-div.sk-label-container:hover .sk-estimator-doc-link:hover,
-.sk-estimator-doc-link:hover {
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-3);
-  color: var(--sklearn-color-background);
-  text-decoration: none;
-}
-
-div.sk-estimator.fitted:hover .sk-estimator-doc-link.fitted:hover,
-.sk-estimator-doc-link.fitted:hover,
-div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
-.sk-estimator-doc-link.fitted:hover {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-3);
-  color: var(--sklearn-color-background);
-  text-decoration: none;
-}
-
-/* Span, style for the box shown on hovering the info icon */
-.sk-estimator-doc-link span {
-  display: none;
-  z-index: 9999;
-  position: relative;
-  font-weight: normal;
-  right: .2ex;
-  padding: .5ex;
-  margin: .5ex;
-  width: min-content;
-  min-width: 20ex;
-  max-width: 50ex;
-  color: var(--sklearn-color-text);
-  box-shadow: 2pt 2pt 4pt #999;
-  /* unfitted */
-  background: var(--sklearn-color-unfitted-level-0);
-  border: .5pt solid var(--sklearn-color-unfitted-level-3);
-}
-
-.sk-estimator-doc-link.fitted span {
-  /* fitted */
-  background: var(--sklearn-color-fitted-level-0);
-  border: var(--sklearn-color-fitted-level-3);
-}
-
-.sk-estimator-doc-link:hover span {
-  display: block;
-}
-
-/* "?"-specific style due to the `<a>` HTML tag */
-
-#sk-container-id-1 a.estimator_doc_link {
-  float: right;
-  font-size: 1rem;
-  line-height: 1em;
-  font-family: monospace;
-  background-color: var(--sklearn-color-background);
-  border-radius: 1rem;
-  height: 1rem;
-  width: 1rem;
-  text-decoration: none;
-  /* unfitted */
-  color: var(--sklearn-color-unfitted-level-1);
-  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
-}
-
-#sk-container-id-1 a.estimator_doc_link.fitted {
-  /* fitted */
-  border: var(--sklearn-color-fitted-level-1) 1pt solid;
-  color: var(--sklearn-color-fitted-level-1);
-}
-
-/* On hover */
-#sk-container-id-1 a.estimator_doc_link:hover {
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-3);
-  color: var(--sklearn-color-background);
-  text-decoration: none;
-}
-
-#sk-container-id-1 a.estimator_doc_link.fitted:hover {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-3);
-}
-
-.estimator-table summary {
-    padding: .5rem;
-    font-family: monospace;
-    cursor: pointer;
-}
-
-.estimator-table details[open] {
-    padding-left: 0.1rem;
-    padding-right: 0.1rem;
-    padding-bottom: 0.3rem;
-}
-
-.estimator-table .parameters-table {
-    margin-left: auto !important;
-    margin-right: auto !important;
-}
-
-.estimator-table .parameters-table tr:nth-child(odd) {
-    background-color: #fff;
-}
-
-.estimator-table .parameters-table tr:nth-child(even) {
-    background-color: #f6f6f6;
-}
-
-.estimator-table .parameters-table tr:hover {
-    background-color: #e0e0e0;
-}
-
-.estimator-table table td {
-    border: 1px solid rgba(106, 105, 104, 0.232);
-}
-
-.user-set td {
-    color:rgb(255, 94, 0);
-    text-align: left;
-}
-
-.user-set td.value pre {
-    color:rgb(255, 94, 0) !important;
-    background-color: transparent !important;
-}
-
-.default td {
-    color: black;
-    text-align: left;
-}
-
-.user-set td i,
-.default td i {
-    color: black;
-}
-
-.copy-paste-icon {
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48IS0tIUZvbnQgQXdlc29tZSBGcmVlIDYuNy4yIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlL2ZyZWUgQ29weXJpZ2h0IDIwMjUgRm9udGljb25zLCBJbmMuLS0+PHBhdGggZD0iTTIwOCAwTDMzMi4xIDBjMTIuNyAwIDI0LjkgNS4xIDMzLjkgMTQuMWw2Ny45IDY3LjljOSA5IDE0LjEgMjEuMiAxNC4xIDMzLjlMNDQ4IDMzNmMwIDI2LjUtMjEuNSA0OC00OCA0OGwtMTkyIDBjLTI2LjUgMC00OC0yMS41LTQ4LTQ4bDAtMjg4YzAtMjYuNSAyMS41LTQ4IDQ4LTQ4ek00OCAxMjhsODAgMCAwIDY0LTY0IDAgMCAyNTYgMTkyIDAgMC0zMiA2NCAwIDAgNDhjMCAyNi41LTIxLjUgNDgtNDggNDhMNDggNTEyYy0yNi41IDAtNDgtMjEuNS00OC00OEwwIDE3NmMwLTI2LjUgMjEuNS00OCA0OC00OHoiLz48L3N2Zz4=);
-    background-repeat: no-repeat;
-    background-size: 14px 14px;
-    background-position: 0;
-    display: inline-block;
-    width: 14px;
-    height: 14px;
-    cursor: pointer;
-}
-</style><body><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>GridSearchCV(cv=5,
-             estimator=Pipeline(steps=[(&#x27;prep&#x27;,
-                                        ColumnTransformer(transformers=[(&#x27;num&#x27;,
-                                                                         StandardScaler(),
-                                                                         [&#x27;odometro&#x27;,
-                                                                          &#x27;fabricante_es_nulo&#x27;,
-                                                                          &#x27;modelo_es_nulo&#x27;,
-                                                                          &#x27;condicion_es_nulo&#x27;,
-                                                                          &#x27;tipo_es_nulo&#x27;]),
-                                                                        (&#x27;cat&#x27;,
-                                                                         OneHotEncoder(handle_unknown=&#x27;ignore&#x27;),
-                                                                         [&#x27;region&#x27;,
-                                                                          &#x27;anio&#x27;,
-                                                                          &#x27;fabricante&#x27;,
-                                                                          &#x27;modelo&#x27;,
-                                                                          &#x27;condicion&#x27;,
-                                                                          &#x27;combustible&#x27;,
-                                                                          &#x27;estado_titulo&#x27;,
-                                                                          &#x27;transmision&#x27;,
-                                                                          &#x27;traccion&#x27;,
-                                                                          &#x27;tipo&#x27;,
-                                                                          &#x27;color_pintura&#x27;,
-                                                                          &#x27;estado&#x27;])])),
-                                       (&#x27;svd&#x27;,
-                                        TruncatedSVD(n_components=100,
-                                                     random_state=42)),
-                                       (&#x27;lasso&#x27;,
-                                        Lasso(max_iter=5000,
-                                              random_state=42))]),
-             param_grid={&#x27;lasso__alpha&#x27;: [0.01, 0.1, 1]})</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" ><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>GridSearchCV</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.7/modules/generated/sklearn.model_selection.GridSearchCV.html">?<span>Documentation for GridSearchCV</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted" data-param-prefix="">
-        <div class="estimator-table">
-            <details>
-                <summary>Parameters</summary>
-                <table class="parameters-table">
-                  <tbody>
-                    
-        <tr class="user-set">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('estimator',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">estimator&nbsp;</td>
-            <td class="value">Pipeline(step...m_state=42))])</td>
-        </tr>
-    
-
-        <tr class="user-set">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('param_grid',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">param_grid&nbsp;</td>
-            <td class="value">{&#x27;lasso__alpha&#x27;: [0.01, 0.1, ...]}</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('scoring',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">scoring&nbsp;</td>
-            <td class="value">None</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('n_jobs',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">n_jobs&nbsp;</td>
-            <td class="value">None</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('refit',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">refit&nbsp;</td>
-            <td class="value">True</td>
-        </tr>
-    
-
-        <tr class="user-set">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('cv',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">cv&nbsp;</td>
-            <td class="value">5</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('verbose',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">verbose&nbsp;</td>
-            <td class="value">0</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('pre_dispatch',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">pre_dispatch&nbsp;</td>
-            <td class="value">&#x27;2*n_jobs&#x27;</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('error_score',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">error_score&nbsp;</td>
-            <td class="value">nan</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('return_train_score',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">return_train_score&nbsp;</td>
-            <td class="value">False</td>
-        </tr>
-    
-                  </tbody>
-                </table>
-            </details>
-        </div>
-    </div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-2" type="checkbox" ><label for="sk-estimator-id-2" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>best_estimator_: Pipeline</div></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___"></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-3" type="checkbox" ><label for="sk-estimator-id-3" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>prep: ColumnTransformer</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.7/modules/generated/sklearn.compose.ColumnTransformer.html">?<span>Documentation for prep: ColumnTransformer</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___prep__">
-        <div class="estimator-table">
-            <details>
-                <summary>Parameters</summary>
-                <table class="parameters-table">
-                  <tbody>
-                    
-        <tr class="user-set">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('transformers',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">transformers&nbsp;</td>
-            <td class="value">[(&#x27;num&#x27;, ...), (&#x27;cat&#x27;, ...)]</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('remainder',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">remainder&nbsp;</td>
-            <td class="value">&#x27;drop&#x27;</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('sparse_threshold',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">sparse_threshold&nbsp;</td>
-            <td class="value">0.3</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('n_jobs',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">n_jobs&nbsp;</td>
-            <td class="value">None</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('transformer_weights',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">transformer_weights&nbsp;</td>
-            <td class="value">None</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('verbose',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">verbose&nbsp;</td>
-            <td class="value">False</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('verbose_feature_names_out',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">verbose_feature_names_out&nbsp;</td>
-            <td class="value">True</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('force_int_remainder_cols',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">force_int_remainder_cols&nbsp;</td>
-            <td class="value">&#x27;deprecated&#x27;</td>
-        </tr>
-    
-                  </tbody>
-                </table>
-            </details>
-        </div>
-    </div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-4" type="checkbox" ><label for="sk-estimator-id-4" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>num</div></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___prep__num__"><pre>[&#x27;odometro&#x27;, &#x27;fabricante_es_nulo&#x27;, &#x27;modelo_es_nulo&#x27;, &#x27;condicion_es_nulo&#x27;, &#x27;tipo_es_nulo&#x27;]</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-5" type="checkbox" ><label for="sk-estimator-id-5" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>StandardScaler</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.7/modules/generated/sklearn.preprocessing.StandardScaler.html">?<span>Documentation for StandardScaler</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___prep__num__">
-        <div class="estimator-table">
-            <details>
-                <summary>Parameters</summary>
-                <table class="parameters-table">
-                  <tbody>
-                    
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('copy',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">copy&nbsp;</td>
-            <td class="value">True</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('with_mean',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">with_mean&nbsp;</td>
-            <td class="value">True</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('with_std',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">with_std&nbsp;</td>
-            <td class="value">True</td>
-        </tr>
-    
-                  </tbody>
-                </table>
-            </details>
-        </div>
-    </div></div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-6" type="checkbox" ><label for="sk-estimator-id-6" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>cat</div></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___prep__cat__"><pre>[&#x27;region&#x27;, &#x27;anio&#x27;, &#x27;fabricante&#x27;, &#x27;modelo&#x27;, &#x27;condicion&#x27;, &#x27;combustible&#x27;, &#x27;estado_titulo&#x27;, &#x27;transmision&#x27;, &#x27;traccion&#x27;, &#x27;tipo&#x27;, &#x27;color_pintura&#x27;, &#x27;estado&#x27;]</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-7" type="checkbox" ><label for="sk-estimator-id-7" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>OneHotEncoder</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.7/modules/generated/sklearn.preprocessing.OneHotEncoder.html">?<span>Documentation for OneHotEncoder</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___prep__cat__">
-        <div class="estimator-table">
-            <details>
-                <summary>Parameters</summary>
-                <table class="parameters-table">
-                  <tbody>
-                    
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('categories',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">categories&nbsp;</td>
-            <td class="value">&#x27;auto&#x27;</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('drop',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">drop&nbsp;</td>
-            <td class="value">None</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('sparse_output',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">sparse_output&nbsp;</td>
-            <td class="value">True</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('dtype',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">dtype&nbsp;</td>
-            <td class="value">&lt;class &#x27;numpy.float64&#x27;&gt;</td>
-        </tr>
-    
-
-        <tr class="user-set">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('handle_unknown',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">handle_unknown&nbsp;</td>
-            <td class="value">&#x27;ignore&#x27;</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('min_frequency',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">min_frequency&nbsp;</td>
-            <td class="value">None</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('max_categories',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">max_categories&nbsp;</td>
-            <td class="value">None</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('feature_name_combiner',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">feature_name_combiner&nbsp;</td>
-            <td class="value">&#x27;concat&#x27;</td>
-        </tr>
-    
-                  </tbody>
-                </table>
-            </details>
-        </div>
-    </div></div></div></div></div></div></div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-8" type="checkbox" ><label for="sk-estimator-id-8" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>TruncatedSVD</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.7/modules/generated/sklearn.decomposition.TruncatedSVD.html">?<span>Documentation for TruncatedSVD</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___svd__">
-        <div class="estimator-table">
-            <details>
-                <summary>Parameters</summary>
-                <table class="parameters-table">
-                  <tbody>
-                    
-        <tr class="user-set">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('n_components',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">n_components&nbsp;</td>
-            <td class="value">100</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('algorithm',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">algorithm&nbsp;</td>
-            <td class="value">&#x27;randomized&#x27;</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('n_iter',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">n_iter&nbsp;</td>
-            <td class="value">5</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('n_oversamples',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">n_oversamples&nbsp;</td>
-            <td class="value">10</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('power_iteration_normalizer',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">power_iteration_normalizer&nbsp;</td>
-            <td class="value">&#x27;auto&#x27;</td>
-        </tr>
-    
-
-        <tr class="user-set">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('random_state',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">random_state&nbsp;</td>
-            <td class="value">42</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('tol',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">tol&nbsp;</td>
-            <td class="value">0.0</td>
-        </tr>
-    
-                  </tbody>
-                </table>
-            </details>
-        </div>
-    </div></div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-9" type="checkbox" ><label for="sk-estimator-id-9" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>Lasso</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.7/modules/generated/sklearn.linear_model.Lasso.html">?<span>Documentation for Lasso</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___lasso__">
-        <div class="estimator-table">
-            <details>
-                <summary>Parameters</summary>
-                <table class="parameters-table">
-                  <tbody>
-                    
-        <tr class="user-set">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('alpha',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">alpha&nbsp;</td>
-            <td class="value">0.01</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('fit_intercept',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">fit_intercept&nbsp;</td>
-            <td class="value">True</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('precompute',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">precompute&nbsp;</td>
-            <td class="value">False</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('copy_X',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">copy_X&nbsp;</td>
-            <td class="value">True</td>
-        </tr>
-    
-
-        <tr class="user-set">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('max_iter',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">max_iter&nbsp;</td>
-            <td class="value">5000</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('tol',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">tol&nbsp;</td>
-            <td class="value">0.0001</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('warm_start',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">warm_start&nbsp;</td>
-            <td class="value">False</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('positive',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">positive&nbsp;</td>
-            <td class="value">False</td>
-        </tr>
-    
-
-        <tr class="user-set">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('random_state',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">random_state&nbsp;</td>
-            <td class="value">42</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('selection',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">selection&nbsp;</td>
-            <td class="value">&#x27;cyclic&#x27;</td>
-        </tr>
-    
-                  </tbody>
-                </table>
-            </details>
-        </div>
-    </div></div></div></div></div></div></div></div></div></div></div></div><script>function copyToClipboard(text, element) {
-    // Get the parameter prefix from the closest toggleable content
-    const toggleableContent = element.closest('.sk-toggleable__content');
-    const paramPrefix = toggleableContent ? toggleableContent.dataset.paramPrefix : '';
-    const fullParamName = paramPrefix ? `${paramPrefix}${text}` : text;
-
-    const originalStyle = element.style;
-    const computedStyle = window.getComputedStyle(element);
-    const originalWidth = computedStyle.width;
-    const originalHTML = element.innerHTML.replace('Copied!', '');
-
-    navigator.clipboard.writeText(fullParamName)
-        .then(() => {
-            element.style.width = originalWidth;
-            element.style.color = 'green';
-            element.innerHTML = "Copied!";
-
-            setTimeout(() => {
-                element.innerHTML = originalHTML;
-                element.style = originalStyle;
-            }, 2000);
-        })
-        .catch(err => {
-            console.error('Failed to copy:', err);
-            element.style.color = 'red';
-            element.innerHTML = "Failed!";
-            setTimeout(() => {
-                element.innerHTML = originalHTML;
-                element.style = originalStyle;
-            }, 2000);
-        });
-    return false;
-}
-
-document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
-    const toggleableContent = element.closest('.sk-toggleable__content');
-    const paramPrefix = toggleableContent ? toggleableContent.dataset.paramPrefix : '';
-    const paramName = element.parentElement.nextElementSibling.textContent.trim();
-    const fullParamName = paramPrefix ? `${paramPrefix}${paramName}` : paramName;
-
-    element.setAttribute('title', fullParamName);
-});
-</script></body></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">logreg_grid</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_clf</span><span class="p">,</span> <span class="n">y_train_clf</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
 <div class="output text_html"><style>#sk-container-id-2 {
   /* Definition of color scheme common for light and dark mode */
   --sklearn-color-text: #000;
@@ -4521,10 +3503,13 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
                                                                           &#x27;tipo&#x27;,
                                                                           &#x27;color_pintura&#x27;,
                                                                           &#x27;estado&#x27;])])),
-                                       (&#x27;logreg&#x27;,
-                                        LogisticRegression(class_weight=&#x27;balanced&#x27;,
-                                                           max_iter=2000))]),
-             param_grid={&#x27;logreg__C&#x27;: [0.01, 0.1, 1, 10]})</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-9" type="checkbox" ><label for="sk-estimator-id-9" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>GridSearchCV</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.7/modules/generated/sklearn.model_selection.GridSearchCV.html">?<span>Documentation for GridSearchCV</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted" data-param-prefix="">
+                                       (&#x27;svd&#x27;,
+                                        TruncatedSVD(n_components=100,
+                                                     random_state=42)),
+                                       (&#x27;lasso&#x27;,
+                                        Lasso(max_iter=5000,
+                                              random_state=42))]),
+             param_grid={&#x27;lasso__alpha&#x27;: [0.01, 0.1, 1]})</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-9" type="checkbox" ><label for="sk-estimator-id-9" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>GridSearchCV</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.7/modules/generated/sklearn.model_selection.GridSearchCV.html">?<span>Documentation for GridSearchCV</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted" data-param-prefix="">
         <div class="estimator-table">
             <details>
                 <summary>Parameters</summary>
@@ -4537,7 +3522,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
                           this.parentElement.nextElementSibling)"
             ></i></td>
             <td class="param">estimator&nbsp;</td>
-            <td class="value">Pipeline(step..._iter=2000))])</td>
+            <td class="value">Pipeline(step...m_state=42))])</td>
         </tr>
     
 
@@ -4547,7 +3532,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
                           this.parentElement.nextElementSibling)"
             ></i></td>
             <td class="param">param_grid&nbsp;</td>
-            <td class="value">{&#x27;logreg__C&#x27;: [0.01, 0.1, ...]}</td>
+            <td class="value">{&#x27;lasso__alpha&#x27;: [0.01, 0.1, ...]}</td>
         </tr>
     
 
@@ -4854,7 +3839,1081 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
                 </table>
             </details>
         </div>
-    </div></div></div></div></div></div></div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-16" type="checkbox" ><label for="sk-estimator-id-16" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>LogisticRegression</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.7/modules/generated/sklearn.linear_model.LogisticRegression.html">?<span>Documentation for LogisticRegression</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___logreg__">
+    </div></div></div></div></div></div></div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-16" type="checkbox" ><label for="sk-estimator-id-16" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>TruncatedSVD</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.7/modules/generated/sklearn.decomposition.TruncatedSVD.html">?<span>Documentation for TruncatedSVD</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___svd__">
+        <div class="estimator-table">
+            <details>
+                <summary>Parameters</summary>
+                <table class="parameters-table">
+                  <tbody>
+                    
+        <tr class="user-set">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('n_components',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">n_components&nbsp;</td>
+            <td class="value">100</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('algorithm',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">algorithm&nbsp;</td>
+            <td class="value">&#x27;randomized&#x27;</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('n_iter',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">n_iter&nbsp;</td>
+            <td class="value">5</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('n_oversamples',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">n_oversamples&nbsp;</td>
+            <td class="value">10</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('power_iteration_normalizer',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">power_iteration_normalizer&nbsp;</td>
+            <td class="value">&#x27;auto&#x27;</td>
+        </tr>
+    
+
+        <tr class="user-set">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('random_state',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">random_state&nbsp;</td>
+            <td class="value">42</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('tol',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">tol&nbsp;</td>
+            <td class="value">0.0</td>
+        </tr>
+    
+                  </tbody>
+                </table>
+            </details>
+        </div>
+    </div></div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-17" type="checkbox" ><label for="sk-estimator-id-17" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>Lasso</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.7/modules/generated/sklearn.linear_model.Lasso.html">?<span>Documentation for Lasso</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___lasso__">
+        <div class="estimator-table">
+            <details>
+                <summary>Parameters</summary>
+                <table class="parameters-table">
+                  <tbody>
+                    
+        <tr class="user-set">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('alpha',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">alpha&nbsp;</td>
+            <td class="value">0.01</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('fit_intercept',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">fit_intercept&nbsp;</td>
+            <td class="value">True</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('precompute',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">precompute&nbsp;</td>
+            <td class="value">False</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('copy_X',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">copy_X&nbsp;</td>
+            <td class="value">True</td>
+        </tr>
+    
+
+        <tr class="user-set">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('max_iter',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">max_iter&nbsp;</td>
+            <td class="value">5000</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('tol',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">tol&nbsp;</td>
+            <td class="value">0.0001</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('warm_start',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">warm_start&nbsp;</td>
+            <td class="value">False</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('positive',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">positive&nbsp;</td>
+            <td class="value">False</td>
+        </tr>
+    
+
+        <tr class="user-set">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('random_state',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">random_state&nbsp;</td>
+            <td class="value">42</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('selection',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">selection&nbsp;</td>
+            <td class="value">&#x27;cyclic&#x27;</td>
+        </tr>
+    
+                  </tbody>
+                </table>
+            </details>
+        </div>
+    </div></div></div></div></div></div></div></div></div></div></div></div><script>function copyToClipboard(text, element) {
+    // Get the parameter prefix from the closest toggleable content
+    const toggleableContent = element.closest('.sk-toggleable__content');
+    const paramPrefix = toggleableContent ? toggleableContent.dataset.paramPrefix : '';
+    const fullParamName = paramPrefix ? `${paramPrefix}${text}` : text;
+
+    const originalStyle = element.style;
+    const computedStyle = window.getComputedStyle(element);
+    const originalWidth = computedStyle.width;
+    const originalHTML = element.innerHTML.replace('Copied!', '');
+
+    navigator.clipboard.writeText(fullParamName)
+        .then(() => {
+            element.style.width = originalWidth;
+            element.style.color = 'green';
+            element.innerHTML = "Copied!";
+
+            setTimeout(() => {
+                element.innerHTML = originalHTML;
+                element.style = originalStyle;
+            }, 2000);
+        })
+        .catch(err => {
+            console.error('Failed to copy:', err);
+            element.style.color = 'red';
+            element.innerHTML = "Failed!";
+            setTimeout(() => {
+                element.innerHTML = originalHTML;
+                element.style = originalStyle;
+            }, 2000);
+        });
+    return false;
+}
+
+document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
+    const toggleableContent = element.closest('.sk-toggleable__content');
+    const paramPrefix = toggleableContent ? toggleableContent.dataset.paramPrefix : '';
+    const paramName = element.parentElement.nextElementSibling.textContent.trim();
+    const fullParamName = paramPrefix ? `${paramPrefix}${paramName}` : paramName;
+
+    element.setAttribute('title', fullParamName);
+});
+</script></body></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">logreg_grid</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_clf</span><span class="p">,</span> <span class="n">y_train_clf</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>#sk-container-id-3 {
+  /* Definition of color scheme common for light and dark mode */
+  --sklearn-color-text: #000;
+  --sklearn-color-text-muted: #666;
+  --sklearn-color-line: gray;
+  /* Definition of color scheme for unfitted estimators */
+  --sklearn-color-unfitted-level-0: #fff5e6;
+  --sklearn-color-unfitted-level-1: #f6e4d2;
+  --sklearn-color-unfitted-level-2: #ffe0b3;
+  --sklearn-color-unfitted-level-3: chocolate;
+  /* Definition of color scheme for fitted estimators */
+  --sklearn-color-fitted-level-0: #f0f8ff;
+  --sklearn-color-fitted-level-1: #d4ebff;
+  --sklearn-color-fitted-level-2: #b3dbfd;
+  --sklearn-color-fitted-level-3: cornflowerblue;
+
+  /* Specific color for light theme */
+  --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
+  --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, white)));
+  --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
+  --sklearn-color-icon: #696969;
+
+  @media (prefers-color-scheme: dark) {
+    /* Redefinition of color scheme for dark theme */
+    --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
+    --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, #111)));
+    --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
+    --sklearn-color-icon: #878787;
+  }
+}
+
+#sk-container-id-3 {
+  color: var(--sklearn-color-text);
+}
+
+#sk-container-id-3 pre {
+  padding: 0;
+}
+
+#sk-container-id-3 input.sk-hidden--visually {
+  border: 0;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+#sk-container-id-3 div.sk-dashed-wrapped {
+  border: 1px dashed var(--sklearn-color-line);
+  margin: 0 0.4em 0.5em 0.4em;
+  box-sizing: border-box;
+  padding-bottom: 0.4em;
+  background-color: var(--sklearn-color-background);
+}
+
+#sk-container-id-3 div.sk-container {
+  /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
+     but bootstrap.min.css set `[hidden] { display: none !important; }`
+     so we also need the `!important` here to be able to override the
+     default hidden behavior on the sphinx rendered scikit-learn.org.
+     See: https://github.com/scikit-learn/scikit-learn/issues/21755 */
+  display: inline-block !important;
+  position: relative;
+}
+
+#sk-container-id-3 div.sk-text-repr-fallback {
+  display: none;
+}
+
+div.sk-parallel-item,
+div.sk-serial,
+div.sk-item {
+  /* draw centered vertical line to link estimators */
+  background-image: linear-gradient(var(--sklearn-color-text-on-default-background), var(--sklearn-color-text-on-default-background));
+  background-size: 2px 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Parallel-specific style estimator block */
+
+#sk-container-id-3 div.sk-parallel-item::after {
+  content: "";
+  width: 100%;
+  border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
+  flex-grow: 1;
+}
+
+#sk-container-id-3 div.sk-parallel {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  background-color: var(--sklearn-color-background);
+  position: relative;
+}
+
+#sk-container-id-3 div.sk-parallel-item {
+  display: flex;
+  flex-direction: column;
+}
+
+#sk-container-id-3 div.sk-parallel-item:first-child::after {
+  align-self: flex-end;
+  width: 50%;
+}
+
+#sk-container-id-3 div.sk-parallel-item:last-child::after {
+  align-self: flex-start;
+  width: 50%;
+}
+
+#sk-container-id-3 div.sk-parallel-item:only-child::after {
+  width: 0;
+}
+
+/* Serial-specific style estimator block */
+
+#sk-container-id-3 div.sk-serial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--sklearn-color-background);
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+
+/* Toggleable style: style used for estimator/Pipeline/ColumnTransformer box that is
+clickable and can be expanded/collapsed.
+- Pipeline and ColumnTransformer use this feature and define the default style
+- Estimators will overwrite some part of the style using the `sk-estimator` class
+*/
+
+/* Pipeline and ColumnTransformer style (default) */
+
+#sk-container-id-3 div.sk-toggleable {
+  /* Default theme specific background. It is overwritten whether we have a
+  specific estimator or a Pipeline/ColumnTransformer */
+  background-color: var(--sklearn-color-background);
+}
+
+/* Toggleable label */
+#sk-container-id-3 label.sk-toggleable__label {
+  cursor: pointer;
+  display: flex;
+  width: 100%;
+  margin-bottom: 0;
+  padding: 0.5em;
+  box-sizing: border-box;
+  text-align: center;
+  align-items: start;
+  justify-content: space-between;
+  gap: 0.5em;
+}
+
+#sk-container-id-3 label.sk-toggleable__label .caption {
+  font-size: 0.6rem;
+  font-weight: lighter;
+  color: var(--sklearn-color-text-muted);
+}
+
+#sk-container-id-3 label.sk-toggleable__label-arrow:before {
+  /* Arrow on the left of the label */
+  content: "▸";
+  float: left;
+  margin-right: 0.25em;
+  color: var(--sklearn-color-icon);
+}
+
+#sk-container-id-3 label.sk-toggleable__label-arrow:hover:before {
+  color: var(--sklearn-color-text);
+}
+
+/* Toggleable content - dropdown */
+
+#sk-container-id-3 div.sk-toggleable__content {
+  display: none;
+  text-align: left;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-3 div.sk-toggleable__content.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-3 div.sk-toggleable__content pre {
+  margin: 0.2em;
+  border-radius: 0.25em;
+  color: var(--sklearn-color-text);
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-3 div.sk-toggleable__content.fitted pre {
+  /* unfitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-3 input.sk-toggleable__control:checked~div.sk-toggleable__content {
+  /* Expand drop-down */
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+
+#sk-container-id-3 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
+  content: "▾";
+}
+
+/* Pipeline/ColumnTransformer-specific style */
+
+#sk-container-id-3 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-3 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator-specific style */
+
+/* Colorize estimator box */
+#sk-container-id-3 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-3 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+#sk-container-id-3 div.sk-label label.sk-toggleable__label,
+#sk-container-id-3 div.sk-label label {
+  /* The background is the default theme color */
+  color: var(--sklearn-color-text-on-default-background);
+}
+
+/* On hover, darken the color of the background */
+#sk-container-id-3 div.sk-label:hover label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+/* Label box, darken color on hover, fitted */
+#sk-container-id-3 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator label */
+
+#sk-container-id-3 div.sk-label label {
+  font-family: monospace;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 1.2em;
+}
+
+#sk-container-id-3 div.sk-label-container {
+  text-align: center;
+}
+
+/* Estimator-specific */
+#sk-container-id-3 div.sk-estimator {
+  font-family: monospace;
+  border: 1px dotted var(--sklearn-color-border-box);
+  border-radius: 0.25em;
+  box-sizing: border-box;
+  margin-bottom: 0.5em;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-3 div.sk-estimator.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+/* on hover */
+#sk-container-id-3 div.sk-estimator:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-3 div.sk-estimator.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Specification for estimator info (e.g. "i" and "?") */
+
+/* Common style for "i" and "?" */
+
+.sk-estimator-doc-link,
+a:link.sk-estimator-doc-link,
+a:visited.sk-estimator-doc-link {
+  float: right;
+  font-size: smaller;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-background);
+  border-radius: 1em;
+  height: 1em;
+  width: 1em;
+  text-decoration: none !important;
+  margin-left: 0.5em;
+  text-align: center;
+  /* unfitted */
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+  color: var(--sklearn-color-unfitted-level-1);
+}
+
+.sk-estimator-doc-link.fitted,
+a:link.sk-estimator-doc-link.fitted,
+a:visited.sk-estimator-doc-link.fitted {
+  /* fitted */
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+div.sk-estimator:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover,
+div.sk-label-container:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+div.sk-estimator.fitted:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover,
+div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+/* Span, style for the box shown on hovering the info icon */
+.sk-estimator-doc-link span {
+  display: none;
+  z-index: 9999;
+  position: relative;
+  font-weight: normal;
+  right: .2ex;
+  padding: .5ex;
+  margin: .5ex;
+  width: min-content;
+  min-width: 20ex;
+  max-width: 50ex;
+  color: var(--sklearn-color-text);
+  box-shadow: 2pt 2pt 4pt #999;
+  /* unfitted */
+  background: var(--sklearn-color-unfitted-level-0);
+  border: .5pt solid var(--sklearn-color-unfitted-level-3);
+}
+
+.sk-estimator-doc-link.fitted span {
+  /* fitted */
+  background: var(--sklearn-color-fitted-level-0);
+  border: var(--sklearn-color-fitted-level-3);
+}
+
+.sk-estimator-doc-link:hover span {
+  display: block;
+}
+
+/* "?"-specific style due to the `<a>` HTML tag */
+
+#sk-container-id-3 a.estimator_doc_link {
+  float: right;
+  font-size: 1rem;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-background);
+  border-radius: 1rem;
+  height: 1rem;
+  width: 1rem;
+  text-decoration: none;
+  /* unfitted */
+  color: var(--sklearn-color-unfitted-level-1);
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+}
+
+#sk-container-id-3 a.estimator_doc_link.fitted {
+  /* fitted */
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+#sk-container-id-3 a.estimator_doc_link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+#sk-container-id-3 a.estimator_doc_link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+}
+
+.estimator-table summary {
+    padding: .5rem;
+    font-family: monospace;
+    cursor: pointer;
+}
+
+.estimator-table details[open] {
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
+    padding-bottom: 0.3rem;
+}
+
+.estimator-table .parameters-table {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.estimator-table .parameters-table tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.estimator-table .parameters-table tr:nth-child(even) {
+    background-color: #f6f6f6;
+}
+
+.estimator-table .parameters-table tr:hover {
+    background-color: #e0e0e0;
+}
+
+.estimator-table table td {
+    border: 1px solid rgba(106, 105, 104, 0.232);
+}
+
+.user-set td {
+    color:rgb(255, 94, 0);
+    text-align: left;
+}
+
+.user-set td.value pre {
+    color:rgb(255, 94, 0) !important;
+    background-color: transparent !important;
+}
+
+.default td {
+    color: black;
+    text-align: left;
+}
+
+.user-set td i,
+.default td i {
+    color: black;
+}
+
+.copy-paste-icon {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48IS0tIUZvbnQgQXdlc29tZSBGcmVlIDYuNy4yIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlL2ZyZWUgQ29weXJpZ2h0IDIwMjUgRm9udGljb25zLCBJbmMuLS0+PHBhdGggZD0iTTIwOCAwTDMzMi4xIDBjMTIuNyAwIDI0LjkgNS4xIDMzLjkgMTQuMWw2Ny45IDY3LjljOSA5IDE0LjEgMjEuMiAxNC4xIDMzLjlMNDQ4IDMzNmMwIDI2LjUtMjEuNSA0OC00OCA0OGwtMTkyIDBjLTI2LjUgMC00OC0yMS41LTQ4LTQ4bDAtMjg4YzAtMjYuNSAyMS41LTQ4IDQ4LTQ4ek00OCAxMjhsODAgMCAwIDY0LTY0IDAgMCAyNTYgMTkyIDAgMC0zMiA2NCAwIDAgNDhjMCAyNi41LTIxLjUgNDgtNDggNDhMNDggNTEyYy0yNi41IDAtNDgtMjEuNS00OC00OEwwIDE3NmMwLTI2LjUgMjEuNS00OCA0OC00OHoiLz48L3N2Zz4=);
+    background-repeat: no-repeat;
+    background-size: 14px 14px;
+    background-position: 0;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+}
+</style><body><div id="sk-container-id-3" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>GridSearchCV(cv=5,
+             estimator=Pipeline(steps=[(&#x27;prep&#x27;,
+                                        ColumnTransformer(transformers=[(&#x27;num&#x27;,
+                                                                         StandardScaler(),
+                                                                         [&#x27;odometro&#x27;,
+                                                                          &#x27;fabricante_es_nulo&#x27;,
+                                                                          &#x27;modelo_es_nulo&#x27;,
+                                                                          &#x27;condicion_es_nulo&#x27;,
+                                                                          &#x27;tipo_es_nulo&#x27;]),
+                                                                        (&#x27;cat&#x27;,
+                                                                         OneHotEncoder(handle_unknown=&#x27;ignore&#x27;),
+                                                                         [&#x27;region&#x27;,
+                                                                          &#x27;anio&#x27;,
+                                                                          &#x27;fabricante&#x27;,
+                                                                          &#x27;modelo&#x27;,
+                                                                          &#x27;condicion&#x27;,
+                                                                          &#x27;combustible&#x27;,
+                                                                          &#x27;estado_titulo&#x27;,
+                                                                          &#x27;transmision&#x27;,
+                                                                          &#x27;traccion&#x27;,
+                                                                          &#x27;tipo&#x27;,
+                                                                          &#x27;color_pintura&#x27;,
+                                                                          &#x27;estado&#x27;])])),
+                                       (&#x27;logreg&#x27;,
+                                        LogisticRegression(class_weight=&#x27;balanced&#x27;,
+                                                           max_iter=2000))]),
+             param_grid={&#x27;logreg__C&#x27;: [0.01, 0.1, 1, 10]})</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-18" type="checkbox" ><label for="sk-estimator-id-18" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>GridSearchCV</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.7/modules/generated/sklearn.model_selection.GridSearchCV.html">?<span>Documentation for GridSearchCV</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted" data-param-prefix="">
+        <div class="estimator-table">
+            <details>
+                <summary>Parameters</summary>
+                <table class="parameters-table">
+                  <tbody>
+                    
+        <tr class="user-set">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('estimator',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">estimator&nbsp;</td>
+            <td class="value">Pipeline(step..._iter=2000))])</td>
+        </tr>
+    
+
+        <tr class="user-set">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('param_grid',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">param_grid&nbsp;</td>
+            <td class="value">{&#x27;logreg__C&#x27;: [0.01, 0.1, ...]}</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('scoring',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">scoring&nbsp;</td>
+            <td class="value">None</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('n_jobs',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">n_jobs&nbsp;</td>
+            <td class="value">None</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('refit',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">refit&nbsp;</td>
+            <td class="value">True</td>
+        </tr>
+    
+
+        <tr class="user-set">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('cv',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">cv&nbsp;</td>
+            <td class="value">5</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('verbose',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">verbose&nbsp;</td>
+            <td class="value">0</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('pre_dispatch',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">pre_dispatch&nbsp;</td>
+            <td class="value">&#x27;2*n_jobs&#x27;</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('error_score',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">error_score&nbsp;</td>
+            <td class="value">nan</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('return_train_score',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">return_train_score&nbsp;</td>
+            <td class="value">False</td>
+        </tr>
+    
+                  </tbody>
+                </table>
+            </details>
+        </div>
+    </div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-19" type="checkbox" ><label for="sk-estimator-id-19" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>best_estimator_: Pipeline</div></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___"></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-20" type="checkbox" ><label for="sk-estimator-id-20" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>prep: ColumnTransformer</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.7/modules/generated/sklearn.compose.ColumnTransformer.html">?<span>Documentation for prep: ColumnTransformer</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___prep__">
+        <div class="estimator-table">
+            <details>
+                <summary>Parameters</summary>
+                <table class="parameters-table">
+                  <tbody>
+                    
+        <tr class="user-set">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('transformers',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">transformers&nbsp;</td>
+            <td class="value">[(&#x27;num&#x27;, ...), (&#x27;cat&#x27;, ...)]</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('remainder',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">remainder&nbsp;</td>
+            <td class="value">&#x27;drop&#x27;</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('sparse_threshold',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">sparse_threshold&nbsp;</td>
+            <td class="value">0.3</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('n_jobs',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">n_jobs&nbsp;</td>
+            <td class="value">None</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('transformer_weights',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">transformer_weights&nbsp;</td>
+            <td class="value">None</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('verbose',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">verbose&nbsp;</td>
+            <td class="value">False</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('verbose_feature_names_out',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">verbose_feature_names_out&nbsp;</td>
+            <td class="value">True</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('force_int_remainder_cols',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">force_int_remainder_cols&nbsp;</td>
+            <td class="value">&#x27;deprecated&#x27;</td>
+        </tr>
+    
+                  </tbody>
+                </table>
+            </details>
+        </div>
+    </div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-21" type="checkbox" ><label for="sk-estimator-id-21" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>num</div></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___prep__num__"><pre>[&#x27;odometro&#x27;, &#x27;fabricante_es_nulo&#x27;, &#x27;modelo_es_nulo&#x27;, &#x27;condicion_es_nulo&#x27;, &#x27;tipo_es_nulo&#x27;]</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-22" type="checkbox" ><label for="sk-estimator-id-22" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>StandardScaler</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.7/modules/generated/sklearn.preprocessing.StandardScaler.html">?<span>Documentation for StandardScaler</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___prep__num__">
+        <div class="estimator-table">
+            <details>
+                <summary>Parameters</summary>
+                <table class="parameters-table">
+                  <tbody>
+                    
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('copy',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">copy&nbsp;</td>
+            <td class="value">True</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('with_mean',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">with_mean&nbsp;</td>
+            <td class="value">True</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('with_std',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">with_std&nbsp;</td>
+            <td class="value">True</td>
+        </tr>
+    
+                  </tbody>
+                </table>
+            </details>
+        </div>
+    </div></div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-23" type="checkbox" ><label for="sk-estimator-id-23" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>cat</div></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___prep__cat__"><pre>[&#x27;region&#x27;, &#x27;anio&#x27;, &#x27;fabricante&#x27;, &#x27;modelo&#x27;, &#x27;condicion&#x27;, &#x27;combustible&#x27;, &#x27;estado_titulo&#x27;, &#x27;transmision&#x27;, &#x27;traccion&#x27;, &#x27;tipo&#x27;, &#x27;color_pintura&#x27;, &#x27;estado&#x27;]</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-24" type="checkbox" ><label for="sk-estimator-id-24" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>OneHotEncoder</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.7/modules/generated/sklearn.preprocessing.OneHotEncoder.html">?<span>Documentation for OneHotEncoder</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___prep__cat__">
+        <div class="estimator-table">
+            <details>
+                <summary>Parameters</summary>
+                <table class="parameters-table">
+                  <tbody>
+                    
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('categories',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">categories&nbsp;</td>
+            <td class="value">&#x27;auto&#x27;</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('drop',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">drop&nbsp;</td>
+            <td class="value">None</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('sparse_output',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">sparse_output&nbsp;</td>
+            <td class="value">True</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('dtype',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">dtype&nbsp;</td>
+            <td class="value">&lt;class &#x27;numpy.float64&#x27;&gt;</td>
+        </tr>
+    
+
+        <tr class="user-set">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('handle_unknown',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">handle_unknown&nbsp;</td>
+            <td class="value">&#x27;ignore&#x27;</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('min_frequency',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">min_frequency&nbsp;</td>
+            <td class="value">None</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('max_categories',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">max_categories&nbsp;</td>
+            <td class="value">None</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('feature_name_combiner',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">feature_name_combiner&nbsp;</td>
+            <td class="value">&#x27;concat&#x27;</td>
+        </tr>
+    
+                  </tbody>
+                </table>
+            </details>
+        </div>
+    </div></div></div></div></div></div></div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-25" type="checkbox" ><label for="sk-estimator-id-25" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>LogisticRegression</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.7/modules/generated/sklearn.linear_model.LogisticRegression.html">?<span>Documentation for LogisticRegression</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___logreg__">
         <div class="estimator-table">
             <details>
                 <summary>Parameters</summary>
@@ -5171,7 +5230,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>📊 Evaluación del modelo de regresión: Modelo
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Evaluación del modelo de regresión: Modelo
 → MAE:  5241.97
 → RMSE: 8224.76
 → R²:   0.664
@@ -5194,7 +5253,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>📊 Evaluación del modelo de regresión: Modelo
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Evaluación del modelo de regresión: Modelo
 → MAE:  7352.21
 → RMSE: 10440.19
 → R²:   0.458
@@ -5218,7 +5277,7 @@ Esto se refleja en las métricas:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>📊 Evaluación del modelo de clasificación: Logistic Regression
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Evaluación del modelo de clasificación: Logistic Regression
 → Accuracy:  0.862
 → Precision: 0.863
 → Recall:    0.862
